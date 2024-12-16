@@ -35,7 +35,7 @@ enemyX_change = []
 enemyY_change = []
 so_luong_enemy = 6
 
-for i in range(so_luong_ufo):
+for i in range(so_luong_enemy):
     enemyimg.append(pygame.image.load('enemies.png'))
     enemyX.append(random.randint(0,800))
     enemyY.append(random.randint(50,150))
