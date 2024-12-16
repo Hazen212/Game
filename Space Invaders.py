@@ -27,13 +27,13 @@ playerY = 480
 playerX_change = 0
 playerY_change = 0
 
-#giao dien UFO
+#giao dien enemy
 enemyimg = []
 enemyX = []
 enemyY = []
 enemyX_change = []
 enemyY_change = []
-so_luong_ufo = 6
+so_luong_enemy = 6
 
 for i in range(so_luong_ufo):
     enemyimg.append(pygame.image.load('enemies.png'))
@@ -123,12 +123,12 @@ while running:
     elif playerX >= 736:
         playerX = 736
 
-#duong di cua con UFO
-    for i in range(so_luong_ufo):
+#duong di cua con enemy
+    for i in range(so_luong_enemy):
 
         #luc thua game
         if enemyY[i] > 200:
-            for j in range(so_luong_ufo):
+            for j in range(so_luong_enemy):
                 enemyY[j] = 2000
             game_over_text()
             break
@@ -142,7 +142,7 @@ while running:
             enemyX_change[i] = -0.15
             enemyY[i] += enemyY_change[i]
 
-        # vien dan ban zo con ufo
+        # vien dan ban zo con enemy
         collision = iscollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
             explosion_sound = mixer.Sound('explosion.wav')
